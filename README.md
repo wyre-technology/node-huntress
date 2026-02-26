@@ -1,17 +1,23 @@
 # node-huntress
 
+[![Build Status](https://github.com/wyre-technology/node-huntress/actions/workflows/release.yml/badge.svg)](https://github.com/wyre-technology/node-huntress/actions/workflows/release.yml)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Node.js](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg)](https://nodejs.org/)
+
 Node.js client library for the [Huntress](https://www.huntress.com) REST API. Zero production dependencies — uses native `fetch` (Node 18+).
+
+> **Note:** This project is maintained by [Wyre Technology](https://github.com/wyre-technology).
 
 ## Installation
 
 ```bash
-npm install node-huntress
+npm install @wyre-technology/node-huntress
 ```
 
 ## Usage
 
 ```typescript
-import { HuntressClient } from 'node-huntress';
+import { HuntressClient } from '@wyre-technology/node-huntress';
 
 const client = new HuntressClient({
   apiKey: 'your-api-key',
@@ -64,7 +70,7 @@ do {
 
 Built-in rate limiter respects the Huntress API limit of 60 requests per minute. Configurable via `rateLimitPerMinute` option.
 
-## Resources
+## API Reference
 
 | Resource | Methods |
 |----------|---------|
@@ -78,6 +84,20 @@ Built-in rate limiter respects the Huntress API limit of 60 requests per minute.
 | `summaryReports` | `list()`, `get(id)` |
 | `signals` | `list()`, `get(id)` |
 | `memberships` | `list()`, `get(id)`, `create()`, `update(id)`, `delete(id)` |
+
+## Development
+
+```bash
+npm ci
+npm run build       # Build the project
+npm run test        # Run tests
+npm run lint        # Type-check
+npm run clean       # Remove dist/
+```
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## License
 
