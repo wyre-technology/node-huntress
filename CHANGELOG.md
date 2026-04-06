@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/wyre-technology/node-huntress/compare/v1.0.0...v1.0.1) (2026-04-06)
+
+
+### Bug Fixes
+
+* add .npmrc and files field for GitHub Packages publishing ([36f1a02](https://github.com/wyre-technology/node-huntress/commit/36f1a02ded0da5eb449617e63007b5190c422a91))
+
 # 1.0.0 (2026-02-26)
 
 
