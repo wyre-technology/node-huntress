@@ -38,6 +38,20 @@
   ],
   "author": "WYRE Technology",
   "license": "Apache-2.0",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wyre-technology/node-huntress.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wyre-technology/node-huntress/issues"
+  },
+  "homepage": "https://github.com/wyre-technology/node-huntress#readme",
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
