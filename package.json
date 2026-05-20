@@ -18,6 +18,9 @@
       }
     }
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "prebuild": "npm run clean",

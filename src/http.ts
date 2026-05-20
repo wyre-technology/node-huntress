@@ -99,7 +99,7 @@ export class HttpClient {
 
       switch (response.status) {
         case 400:
-          throw new ValidationError('Bad request', [], responseBody);
+          throw new ValidationError('Bad request', extractValidationErrors(responseBody), responseBody);
         case 401:
           throw new AuthenticationError('Authentication failed', responseBody);
         case 403:
@@ -126,4 +126,41 @@ export class HttpClient {
 
     throw lastError || new Error('Request failed after retries');
   }
+}
+
+/**
+ * Best-effort extraction of structured field errors from a 400 response body.
+ * Handles the common shapes returned by the Huntress API:
+ *   - { errors: [{ field, message }, ...] }
+ *   - { errors: { field: "message" | ["message", ...] } }
+ * Falls back to an empty array when no structured errors are present.
+ */
+function extractValidationErrors(body: unknown): Array<{ field: string; message: string }> {
+  if (!body || typeof body !== 'object') return [];
+  const errors = (body as { errors?: unknown }).errors;
+  if (!errors) return [];
+
+  if (Array.isArray(errors)) {
+    return errors
+      .map((e) => {
+        if (e && typeof e === 'object') {
+          const obj = e as Record<string, unknown>;
+          return {
+            field: String(obj.field ?? obj.name ?? ''),
+            message: String(obj.message ?? obj.detail ?? e),
+          };
+        }
+        return { field: '', message: String(e) };
+      })
+      .filter((e) => e.message.length > 0);
+  }
+
+  if (typeof errors === 'object') {
+    return Object.entries(errors as Record<string, unknown>).flatMap(([field, value]) => {
+      const messages = Array.isArray(value) ? value : [value];
+      return messages.map((m) => ({ field, message: String(m) }));
+    });
+  }
+
+  return [];
 }
