@@ -58,11 +58,15 @@ export class HttpClient {
     }
 
     let lastError: Error | null = null;
+    // When a 429 sets its own retry-after delay, skip the exponential
+    // backoff sleep on the next iteration so only one delay applies.
+    let skipBackoff = false;
     for (let attempt = 0; attempt <= this.maxRetries; attempt++) {
-      if (attempt > 0) {
+      if (attempt > 0 && !skipBackoff) {
         const delay = Math.min(1000 * 2 ** (attempt - 1), 30_000);
         await new Promise(r => setTimeout(r, delay));
       }
+      skipBackoff = false;
 
       await this.rateLimiter.acquire();
 
@@ -110,6 +114,7 @@ export class HttpClient {
           const retryAfter = parseInt(response.headers.get('retry-after') || '60', 10);
           if (attempt < this.maxRetries) {
             await new Promise(r => setTimeout(r, retryAfter * 1000));
+            skipBackoff = true;
             continue;
           }
           throw new RateLimitError('Rate limit exceeded', retryAfter, responseBody);

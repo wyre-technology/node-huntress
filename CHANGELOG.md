@@ -1,3 +1,12 @@
+## [Unreleased]
+
+### Fixed
+
+- Stop tracking `node_modules/` and `dist/` in git; both are now ignored as intended.
+- `ValidationError` for 400 responses now extracts structured field errors from the response body.
+- Resolve transitive `npm audit` vulnerabilities via `npm audit fix` (16 down to 6; remaining 6 are dev-only and require breaking upgrades).
+- Retry backoff no longer stacks two sleeps on a 429 response — only the `retry-after` delay applies for that iteration.
+
 ## [1.0.1](https://github.com/wyre-technology/node-huntress/compare/v1.0.0...v1.0.1) (2026-04-06)
 
 
