@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/wyre-technology/node-huntress/compare/v1.0.1...v1.0.2) (2026-05-20)
+
+
+### Bug Fixes
+
+* packaging hygiene, audit fixes, and 429 backoff ([#2](https://github.com/wyre-technology/node-huntress/issues/2)) ([76c783c](https://github.com/wyre-technology/node-huntress/commit/76c783c93b2ed1640b0dcfd1b95679d31be9291c))
+
 ## [Unreleased]
 
 ### Fixed
