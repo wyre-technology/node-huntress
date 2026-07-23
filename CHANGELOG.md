@@ -1,3 +1,11 @@
+## [1.0.3](https://github.com/wyre-technology/node-huntress/compare/v1.0.2...v1.0.3) (2026-07-23)
+
+
+### Bug Fixes
+
+* **ci:** drop Node 18.x from the test matrix (EOL, vitest 4 requires 20.12+) ([#27](https://github.com/wyre-technology/node-huntress/issues/27)) ([898fcdd](https://github.com/wyre-technology/node-huntress/commit/898fcddd8c5c31525e4f7dce0e23b7ca180f701b))
+* **deps:** re-pin typescript to ^6.0.3 + ignoreDeprecations for TS7 DTS build breakage ([#26](https://github.com/wyre-technology/node-huntress/issues/26)) ([f07ef27](https://github.com/wyre-technology/node-huntress/commit/f07ef2734a54a3d2bb315e18d214e1e5bf483101)), closes [blackpoint-mcp#44](https://github.com/blackpoint-mcp/issues/44)
+
 ## [1.0.2](https://github.com/wyre-technology/node-huntress/compare/v1.0.1...v1.0.2) (2026-05-20)
 
 
