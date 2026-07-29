@@ -13,9 +13,12 @@ describe('HuntressClient', () => {
   });
 
   describe('actor', () => {
-    it('should get actor', async () => {
+    it('should get actor from the unwrapped top-level response', async () => {
       const actor = await client.actor.get();
-      expect(actor.user?.email).toBe('test@example.com');
+      expect(actor).toBeDefined();
+      expect(actor.reseller).toBeNull();
+      expect(actor.account).toEqual({ id: 1, name: 'Test Account' });
+      expect(actor.user).toEqual({ id: 1, email: 'test@example.com', name: 'Test User' });
     });
   });
 
