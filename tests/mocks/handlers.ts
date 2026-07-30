@@ -9,9 +9,13 @@ export const handlers = [
     })
   ),
 
+  // The real /v1/actor endpoint returns the actor shape at the TOP LEVEL —
+  // it is NOT wrapped in { actor: ... } like most other Huntress endpoints.
   http.get(`${BASE_URL}/v1/actor`, () =>
     HttpResponse.json({
-      actor: { reseller: null, account: { id: 1, name: 'Test Account' }, user: { id: 1, email: 'test@example.com', name: 'Test User' } },
+      reseller: null,
+      account: { id: 1, name: 'Test Account' },
+      user: { id: 1, email: 'test@example.com', name: 'Test User' },
     })
   ),
 
