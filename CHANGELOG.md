@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/wyre-technology/node-huntress/compare/v1.0.3...v1.0.4) (2026-07-30)
+
+
+### Bug Fixes
+
+* **actor:** read /v1/actor response from top level instead of res.actor ([#32](https://github.com/wyre-technology/node-huntress/issues/32)) ([ddcf539](https://github.com/wyre-technology/node-huntress/commit/ddcf5393dd4985b864d4bb5ea04a841fd1a32d5f))
+
 ## [1.0.3](https://github.com/wyre-technology/node-huntress/compare/v1.0.2...v1.0.3) (2026-07-23)
 
 
