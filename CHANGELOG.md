@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/WYRE-AI/node-huntress/compare/v1.0.4...v1.0.5) (2026-08-25)
+
+
+### Bug Fixes
+
+* migrate to WYRE-AI org (npm scope, ghcr namespace, registry) ([#39](https://github.com/WYRE-AI/node-huntress/issues/39)) ([f2d5cde](https://github.com/WYRE-AI/node-huntress/commit/f2d5cde80f7a78895bb924e282a713e38584bcf7))
+
 ## [1.0.4](https://github.com/wyre-technology/node-huntress/compare/v1.0.3...v1.0.4) (2026-07-30)
 
 
