@@ -1,5 +1,5 @@
 {
-  "name": "@wyre-technology/node-huntress",
+  "name": "@wyre-ai/node-huntress",
   "version": "1.0.4",
   "description": "Node.js client library for the Huntress API",
   "type": "module",
@@ -46,12 +46,12 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wyre-technology/node-huntress.git"
+    "url": "git+https://github.com/WYRE-AI/node-huntress.git"
   },
   "bugs": {
-    "url": "https://github.com/wyre-technology/node-huntress/issues"
+    "url": "https://github.com/WYRE-AI/node-huntress/issues"
   },
-  "homepage": "https://github.com/wyre-technology/node-huntress#readme",
+  "homepage": "https://github.com/WYRE-AI/node-huntress#readme",
   "devDependencies": {
     "@semantic-release/changelog": "^7.0.0",
     "@semantic-release/git": "^11.0.1",
