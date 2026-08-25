@@ -1,23 +1,23 @@
 # node-huntress
 
-[![Build Status](https://github.com/wyre-technology/node-huntress/actions/workflows/release.yml/badge.svg)](https://github.com/wyre-technology/node-huntress/actions/workflows/release.yml)
+[![Build Status](https://github.com/WYRE-AI/node-huntress/actions/workflows/release.yml/badge.svg)](https://github.com/WYRE-AI/node-huntress/actions/workflows/release.yml)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg)](https://nodejs.org/)
 
 Node.js client library for the [Huntress](https://www.huntress.com) REST API. Zero production dependencies — uses native `fetch` (Node 18+).
 
-> **Note:** This project is maintained by [Wyre Technology](https://github.com/wyre-technology).
+> **Note:** This project is maintained by [Wyre Technology](https://github.com/WYRE-AI).
 
 ## Installation
 
 ```bash
-npm install @wyre-technology/node-huntress
+npm install @wyre-ai/node-huntress
 ```
 
 ## Usage
 
 ```typescript
-import { HuntressClient } from '@wyre-technology/node-huntress';
+import { HuntressClient } from '@wyre-ai/node-huntress';
 
 const client = new HuntressClient({
   apiKey: 'your-api-key',
